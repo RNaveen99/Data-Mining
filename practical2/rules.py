@@ -13,3 +13,7 @@ def checkPetal(dataset):
 def checkSepal(dataset):
     length = lambda x : x <= 30
     return dataset['Sepal.Length'].apply(length)
+
+def sepalsLonger(dataset):
+    length = lambda x : x[0] > x[1]
+    return dataset[['Sepal.Length', 'Petal.Length']].apply(length, axis = 1)
